@@ -73,3 +73,50 @@ Removing duplicates from the following list
 produces
 
 8
+
+## Notes for the Interviewer
+
+### Clarifying Questions
+
+#### Q: Should I modify the list that was passed in or create a new list?
+
+A: You can do either.
+
+#### Q: What should I do if the input is None?
+
+A: You can assume the input will include at least two nodes and the expected output will include at least one node.
+
+#### Q: What should I do if the list has only a single element?
+
+A: You can assume the input will include at least two nodes and the expected output will include at least one node.
+
+#### Q: Will the input contain any cycles?
+
+A: No.
+
+#### Q: What should I do if invalid input is passed in?
+
+A: You can assume that the input will be valid.
+
+#### Q: What data types will be stored in the values?
+
+A: Integers, but more generally, if we assume that all the values in the list are mutually comparable, would the type matter?
+
+### Hints
+
+- If your candidate struggles with an initial algorithm, encourage them to walk through an example and describe how they would do it using only pen and paper.
+
+- If your candidate still struggles to form an algorithm, ask them what data structure might be most useful for checking if a value has been seen before.
+
+- It can be challenging to debug this problem. If your candidate is failing a test and unsure why, encourage them to add print statements that help them see values are in the list that is being returned from their function.
+
+- It is OK for your candidate to use other intermediate data structures as part of their solution, but remind them that their final output MUST be a linked list using the provided Node class.
+
+## Optional Bonus At-Home Challenges
+
+To be attempted after completing the interview.
+
+- What are the time/space complexities of each sample solution?
+- How does the `__eq__` function on the Node class work?
+- What is the time/space complexity of the `__eq__` function on the Node class?
+- How could the `__eq__` method be improved to more robustly handle cycle detection and avoid `RecursionError`s?

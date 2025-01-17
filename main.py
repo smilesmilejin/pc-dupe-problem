@@ -19,9 +19,35 @@ class Node:
             raise Exception("Linked list has a cycle or is too large")
 
 
+# IMPLEMENTATION OPTION 1: Use a seen set
 def remove_duplicates(head):
-    # Your solution here!
-    pass
+    seen = {head.value}  # Create a set tracking which values we've seen before
+    new_head = Node(head.value)  # Create a new node with the same value as the input head
+    new_current = new_head
+    old_current = head.next
+
+    while old_current:  # iterate through the input list
+        value = old_current.value
+        if value not in seen:  # if we haven't seen this value before
+            seen.add(value)  # mark it as seen
+            new_current.next = Node(value)  # create a new node with the value on the tail
+            new_current = new_current.next  # move to the tail of our new list
+        old_current = old_current.next  # move to the next element of the input list
+
+    return new_head
+
+    
+# IMPLEMENTATION OPTION 2: Modify in-place (relies on assumption that input is sorted)
+def remove_duplicates_alternative(head):
+    current = head  # current keeps track of the node we're currently visiting
+
+    while current is not None and current.next is not None:  # iterate through each node
+        if current.value == current.next.value:  # if the next node is a duplicate
+            current.next = current.next.next  # skip it
+        else:  # if the next node is not a duplicate
+            current = current.next  # move to that node
+
+    return head
 
 
 # Input: 1->2->2->3
