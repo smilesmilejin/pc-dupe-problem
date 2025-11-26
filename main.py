@@ -69,7 +69,7 @@ def remove_duplicates(head):
 
     # return new_head
 
-    ###################### Method 1
+    ###################### Method 1 - modifying the original list
     if not head.next:
         return head
     
