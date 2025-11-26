@@ -23,6 +23,84 @@ def remove_duplicates(head):
     # Your solution here!
     pass
 
+    # if LL has length of 1
+        # return head
+
+
+    # set a new_head point to head
+    # new_head.next = None
+    # pointer_node = new_head
+
+    # if new_head.next 
+
+    # current = new_head.next
+    # loop throught the SSL, start with the second node 
+        # if current.value != point_node:
+            # point_node.next = current
+            # point_node.next.next = None
+
+        # current = current.next
+
+    # return new_head
+
+    # if not head.next:
+    #     return head
+    
+    # new_head = head
+    # new_head.next = None
+    # point_node = new_head
+
+    # current = new_head.next
+
+    # while current:
+    #     if current.value != point_node.value:
+    #         point_node.next = current
+    #         point_node.next.next = None
+
+    #     current = current.next
+
+    # # print('####### result SSL')
+    
+    # # cur = new_head
+
+    # # while cur:
+    # #     print(cur.value)
+    # #     cur = cur.next
+
+    # return new_head
+
+
+    if not head.next:
+        return head
+    
+
+    point_node = head
+    current = head.next
+
+    while current:
+        if current.value == point_node.value:
+            # print(f'current value {current.value} is equal to point value {point_node.value}')
+            point_node.next = None
+
+        elif current.value != point_node.value:
+            point_node.next = current
+            point_node = current
+
+        current = current.next
+
+        # print('####### result SSL')
+
+        # cur = head
+
+        # while cur:
+        #     print(cur.value)
+        #     cur = cur.next
+
+    return head
+
+
+    
+
 
 # Input: 1->2->2->3
 # Expected output: 1->2->3
