@@ -69,76 +69,13 @@ def remove_duplicates(head):
 
     # return new_head
 
-    # ###################### Method 1
-    # if not head.next:
-    #     return head
-    
-
-    # point_node = head
-    # current = head.next
-
-    # while current:
-    #     if current.value == point_node.value:
-    #         # print(f'current value {current.value} is equal to point value {point_node.value}')
-    #         point_node.next = None
-
-    #     elif current.value != point_node.value:
-    #         point_node.next = current
-    #         point_node = current
-
-    #     current = current.next
-
-    #     # print('####### result SSL')
-
-    #     # cur = head
-
-    #     # while cur:
-    #     #     print(cur.value)
-    #     #     cur = cur.next
-
-    # return head
-    # ########### End of Method 1
-
-
-    ########################  Method 2, build another linked list without modify the original
-
+    ###################### Method 1
     if not head.next:
         return head
     
 
-    # Build a new linked list
-    new_ll_head = Node(head.value)
-    pointer_node = new_ll_head
-
+    point_node = head
     current = head.next
-    while current:
-        pointer_node.next = Node(current.value)
-        pointer_node = pointer_node.next
-
-        current = current.next
-
-        # print('####### new SSL')
-        # cur = new_ll_head
-        # while cur:
-        #     print(cur.value)
-        #     cur = cur.next
-
-    # # duplicate head has same reference of the previous head 
-    # # original head address:  <__main__.Node object at 0x100cbde00>
-    # # duplicate head address:  <__main__.Node object at 0x100cbde00>
-
-    # duplicate_head = head
-    # print('original head address: ', head)
-    # print('duplicate head address: ', duplicate_head)
-
-    # print('duplicate_head')
-    # while duplicate_head:
-    #     print(duplicate_head.value)
-    #     duplicate_head = duplicate_head.next
-
-    
-    point_node = new_ll_head
-    current = new_ll_head.next
 
     while current:
         if current.value == point_node.value:
@@ -159,19 +96,85 @@ def remove_duplicates(head):
         #     print(cur.value)
         #     cur = cur.next
 
-    # print('############ Original Linked List')
-    # cur = head
-    # while cur:
-    #     print(cur.value)
-    #     cur = cur.next
-    
-    # print('############ New linked list')
-    # cur = new_ll_head
-    # while cur:
-    #     print(cur.value)
-    #     cur = cur.next
+    return head
+    ########### End of Method 1
 
-    return new_ll_head
+
+    # ########################  Method 2, build another linked list without modify the original
+
+    # if not head.next:
+    #     return head
+    
+
+    # # Build a new linked list
+    # new_ll_head = Node(head.value)
+    # pointer_node = new_ll_head
+
+    # current = head.next
+    # while current:
+    #     pointer_node.next = Node(current.value)
+    #     pointer_node = pointer_node.next
+
+    #     current = current.next
+
+    #     # print('####### new SSL')
+    #     # cur = new_ll_head
+    #     # while cur:
+    #     #     print(cur.value)
+    #     #     cur = cur.next
+
+    # # # duplicate head has same reference of the previous head 
+    # # # original head address:  <__main__.Node object at 0x100cbde00>
+    # # # duplicate head address:  <__main__.Node object at 0x100cbde00>
+
+    # # duplicate_head = head
+    # # print('original head address: ', head)
+    # # print('duplicate head address: ', duplicate_head)
+
+    # # print('duplicate_head')
+    # # while duplicate_head:
+    # #     print(duplicate_head.value)
+    # #     duplicate_head = duplicate_head.next
+
+    
+    # point_node = new_ll_head
+    # current = new_ll_head.next
+
+    # while current:
+    #     if current.value == point_node.value:
+    #         # print(f'current value {current.value} is equal to point value {point_node.value}')
+    #         point_node.next = None
+
+    #     elif current.value != point_node.value:
+    #         point_node.next = current
+    #         point_node = current
+
+    #     current = current.next
+
+    #     # print('####### result SSL')
+
+    #     # cur = head
+
+    #     # while cur:
+    #     #     print(cur.value)
+    #     #     cur = cur.next
+
+    # # print('############ Original Linked List')
+    # # cur = head
+    # # while cur:
+    # #     print(cur.value)
+    # #     cur = cur.next
+    
+    # # print('############ New linked list')
+    # # cur = new_ll_head
+    # # while cur:
+    # #     print(cur.value)
+    # #     cur = cur.next
+
+    # return new_ll_head
+
+
+    # ######################## End  Method 2
 
 # Input: 1->2->2->3
 # Expected output: 1->2->3
